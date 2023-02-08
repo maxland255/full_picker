@@ -217,6 +217,7 @@ void getFullPicker({
   required bool multiFile,
   required String prefixName,
   required bool inSheet,
+  required List<String>? allowedExtensions,
 }) async {
   onIsUserCheng.call(false);
   FullPickerOutput? value;
@@ -232,7 +233,8 @@ void getFullPicker({
           pickerFileType: FullPickerType.mixed,
           prefixName: prefixName,
           inSheet: inSheet,
-          allowedExtensions: ["mp4", "avi", "mkv", "jpg", "jpeg", "png", "bmp"],
+          allowedExtensions: allowedExtensions ??
+              ["mp4", "avi", "mkv", "jpg", "jpeg", "png", "bmp"],
           multiFile: multiFile,
           onError: onError,
           imageCropper: imageCropper,

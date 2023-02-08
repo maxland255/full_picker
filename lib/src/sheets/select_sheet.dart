@@ -18,25 +18,27 @@ class SelectSheet extends StatefulWidget {
   final bool multiFile;
   final String bodyTextUrl;
   final String prefixName;
+  final List<String>? allowedExtensions;
 
-  const SelectSheet(
-      {Key? key,
-      required this.videoCompressor,
-      required this.prefixName,
-      required this.multiFile,
-      required this.imageCropper,
-      required this.context,
-      required this.onSelected,
-      required this.onError,
-      required this.imageCamera,
-      required this.videoCamera,
-      required this.image,
-      required this.video,
-      required this.voiceRecorder,
-      required this.url,
-      required this.bodyTextUrl,
-      required this.file})
-      : super(key: key);
+  const SelectSheet({
+    Key? key,
+    required this.videoCompressor,
+    required this.prefixName,
+    required this.multiFile,
+    required this.imageCropper,
+    required this.context,
+    required this.onSelected,
+    required this.onError,
+    required this.imageCamera,
+    required this.videoCamera,
+    required this.image,
+    required this.video,
+    required this.voiceRecorder,
+    required this.url,
+    required this.bodyTextUrl,
+    required this.file,
+    required this.allowedExtensions,
+  }) : super(key: key);
 
   @override
   State<SelectSheet> createState() => _SheetSelectState();
@@ -145,6 +147,7 @@ class _SheetSelectState extends State<SelectSheet> {
       multiFile: widget.multiFile,
       inSheet: true,
       bodyTextUrl: widget.bodyTextUrl,
+      allowedExtensions: widget.allowedExtensions,
     );
   }
 }

@@ -22,6 +22,7 @@ class FullPicker {
   final ValueSetter<FullPickerOutput> onSelected;
   final ValueSetter<int>? onError;
   final BuildContext context;
+  final List<String>? allowedExtensions;
 
   FullPicker(
       {required this.context,
@@ -38,6 +39,7 @@ class FullPicker {
       this.videoCompressor = false,
       this.imageCropper = false,
       this.multiFile = false,
+      this.allowedExtensions,
       required this.onSelected,
       this.onError}) {
     /// show or not show sheet for single item or multi item
@@ -108,6 +110,7 @@ class FullPicker {
             prefixName: prefixName,
             imageCropper: imageCropper,
             multiFile: multiFile,
+            allowedExtensions: allowedExtensions,
           ),
           context);
     }
@@ -134,6 +137,7 @@ class FullPicker {
       imageCropper: imageCropper,
       multiFile: multiFile,
       inSheet: false,
+      allowedExtensions: allowedExtensions,
     );
   }
 }
